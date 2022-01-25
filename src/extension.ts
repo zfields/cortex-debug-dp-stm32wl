@@ -13,11 +13,9 @@ export function activate(context: ExtensionContext) {
 	}
 
 	cortexDebug.activate().then((cdbg) => {
-		cdbg.registerSVDFile(/^STM32L4[a-z0-9]1.*/i, path.join(context.extensionPath, 'data', 'STM32L4x1.svd'));
-		cdbg.registerSVDFile(/^STM32L4[a-z0-9]2.*/i, path.join(context.extensionPath, 'data', 'STM32L4x2.svd'));
-		cdbg.registerSVDFile(/^STM32L4[a-z0-9]3.*/i, path.join(context.extensionPath, 'data', 'STM32L4x3.svd'));
-		cdbg.registerSVDFile(/^STM32L4[a-z0-9]5.*/i, path.join(context.extensionPath, 'data', 'STM32L4x5.svd'));
-		cdbg.registerSVDFile(/^STM32L4[a-z0-9]6.*/i, path.join(context.extensionPath, 'data', 'STM32L4x6.svd'));
+		cdbg.registerSVDFile(/^STM32WL5[a-z0-9]_CM0P.*/i, path.join(context.extensionPath, 'data', 'STM32WL5x_CM0P.svd'));
+		cdbg.registerSVDFile(/^STM32WL5[a-z0-9]_CM4.*/i, path.join(context.extensionPath, 'data', 'STM32WL5x_CM4.svd'));
+		cdbg.registerSVDFile(/^STM32WLE5_CM4.*/i, path.join(context.extensionPath, 'data', 'STM32WLE5_CM4.svd'));
 	}, (error) => {
 		console.log('Unable to activate cortexDebug');
 	});
